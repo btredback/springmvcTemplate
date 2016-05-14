@@ -1,6 +1,5 @@
 package com.demo.common.bean;
 
-import com.demo.common.servlet.Config;
 import com.demo.util.ValueUtils;
 
 public class FTPConfig
@@ -13,14 +12,7 @@ public class FTPConfig
 
     private Integer port;
 
-    public static FTPConfig parse(Config conf)
-    {
-        String host = conf.getProperty("SYS_FTP_HOST");
-        String username = conf.getProperty("SYS_FTP_USERNAME");
-        String password = conf.getProperty("SYS_FTP_PASSWORD");
-        Integer port = Integer.valueOf(ValueUtils.getInt(conf.getProperty("SYS_FTP_PORT"), 21));
-        return new FTPConfig(host, username, password, port);
-    }
+    
 
     public FTPConfig(String host, String userName, String password, Integer port) {
         this.host = host;

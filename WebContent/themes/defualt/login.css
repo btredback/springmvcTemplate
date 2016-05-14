@@ -1,66 +1,106 @@
 @CHARSET "UTF-8";
 
-.panel-title {
-	text-align: left;
+body{
+	background: #ebebeb;
+	font-family: "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei","\9ED1\4F53",Arial,sans-serif;
+	color: #222;
+	font-size: 12px;
 }
-
-body {
-	background-image: url('images/login_bg_repeat.jpg');
-	background-position: center;
-	background-repeat: repeat;
+*{padding: 0px;margin: 0px;}
+.top_div{
+	background: #008ead;
+	width: 100%;
+	height: 400px;
 }
-
-.logonForm {
-	/*background-image: url('images/login_bg.jpg');*/
-	background-position: center;
-	background-repeat: no-repeat;
+.ipt{
+	border: 1px solid #d3d3d3;
+	padding: 10px 10px;
+	width: 290px;
+	border-radius: 4px;
+	padding-left: 35px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s
 }
-
-#logonInfo {
-	background-image: url('images/login.png');
-	background-position: center;
-	background-repeat: no-repeat;
+.ipt:focus{
+	border-color: #66afe9;
+	outline: 0;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
 }
-
-.login-btn-small {
-	width: 100px;
-	background-image: url('images/login_button_little.png');
-	background-position: left;
-	background-repeat: no-repeat;
-	font-weight: bold;
-	cursor: pointer;
-	*cursor: hand;
-}
-
-.login-btn-large {
-	width: 100px;
-	height: 70px;
-	background-image: url('images/login_button.png');
-	background-position: center;
-	background-repeat: no-repeat;
-	font-weight: bold;
-	cursor: pointer;
-	*cursor: hand;
-}
-
-#titleDiv {
-	width: 600px;
-	height: 81px;
-	background-image: url('images/login_title.png');
-	background-position: center;
-	background-repeat: no-repeat;
-	position: relative;
-	top: 50px;
-}
-
-#SystemTitle {
-	display: none;
+.u_logo{
+	background: url("images/username.png") no-repeat;
+	padding: 10px 10px;
 	position: absolute;
-	font-family: 黑体, 隶书;
-	font-size: 32pt;
-	font-weight: 500;
-	text-align: center;
-	filter: glow(color = #ffffff, strength = 3);
-	text-shadow: 2px 2px 1px #fff;
-	width: 600px;
+	top: 43px;
+	left: 40px;
+
+}
+.p_logo{
+	background: url("images/password.png") no-repeat;
+	padding: 10px 10px;
+	position: absolute;
+	top: 12px;
+	left: 40px;
+}
+a{
+	text-decoration: none;
+}
+.tou{
+	background: url("images/tou.png") no-repeat;
+	width: 97px;
+	height: 92px;
+	position: absolute;
+	top: -87px;
+	left: 140px;
+}
+.left_hand{
+	background: url("images/left_hand.png") no-repeat;
+	width: 32px;
+	height: 37px;
+	position: absolute;
+	top: -38px;
+	left: 150px;
+}
+.right_hand{
+	background: url("images/right_hand.png") no-repeat;
+	width: 32px;
+	height: 37px;
+	position: absolute;
+	top: -38px;
+	right: -64px;
+}
+.initial_left_hand{
+	background: url("images/hand.png") no-repeat;
+	width: 30px;
+	height: 20px;
+	position: absolute;
+	top: -12px;
+	left: 100px;
+}
+.initial_right_hand{
+	background: url("images/hand.png") no-repeat;
+	width: 30px;
+	height: 20px;
+	position: absolute;
+	top: -12px;
+	right: -112px;
+}
+.left_handing{
+	background: url("images/left-handing.png") no-repeat;
+	width: 30px;
+	height: 20px;
+	position: absolute;
+	top: -24px;
+	left: 139px;
+}
+.right_handinging{
+	background: url("images/right_handing.png") no-repeat;
+	width: 30px;
+	height: 20px;
+	position: absolute;
+	top: -21px;
+	left: 210px;
 }

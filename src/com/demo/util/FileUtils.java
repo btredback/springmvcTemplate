@@ -13,7 +13,6 @@ import java.io.OutputStream;
 import java.util.Calendar;
 import java.util.TimeZone;
 
-import com.demo.common.servlet.Config;
 
 
 public class FileUtils
@@ -134,64 +133,6 @@ public class FileUtils
             }
             System.gc();
             deleteFile(in);
-        }
-    }
-
-    public static String uploadFile2FTP(String fileID, String filePath, String filename, InputStream input, Config config) throws Exception
-    {
-        try
-        {
-            String host = config.getProperty("SYS_FTP_HOST");
-            String username = config.getProperty("SYS_FTP_USERNAME");
-            String password = config.getProperty("SYS_FTP_PASSWORD");
-            String port = config.getProperty("SYS_FTP_PORT");
-            FtpUtils ftp = new FtpUtils();
-            fileID = fileID != null ? fileID : StringUtils.makeUUID();
-            if (ftp.connect(host, username, password, Integer.parseInt(port)))
-                ftp.upload(filePath, fileID + "_" + filename, input, true);
-        } finally
-        {
-            if (input != null)
-            {
-                input.close();
-            }
-        }
-        return fileID;
-    }
-
-    public static boolean downLoadFTPFile(String fullFilePath, OutputStream os, Config config) throws Exception
-    {
-        FtpUtils ftp = new FtpUtils();
-        boolean conFlag = false;
-        boolean downloadFlag = false;
-        String host = config.getProperty("SYS_FTP_HOST");
-        String username = config.getProperty("SYS_FTP_USERNAME");
-        String password = config.getProperty("SYS_FTP_PASSWORD");
-        String port = config.getProperty("SYS_FTP_PORT");
-        try
-        {
-            conFlag = ftp.connect(host, username, password, Integer.parseInt(port));
-            if (conFlag)
-                downloadFlag = ftp.download(fullFilePath, os);
-        } finally
-        {
-            ftp.disconnect();
-        }
-        return downloadFlag;
-    }
-
-    public static void deleteFTPFiles(String[] fullFileNames, Config config) throws Exception
-    {
-        String host = config.getProperty("SYS_FTP_HOST");
-        String username = config.getProperty("SYS_FTP_USERNAME");
-        String password = config.getProperty("SYS_FTP_PASSWORD");
-        String port = config.getProperty("SYS_FTP_PORT");
-        FtpUtils ftp = new FtpUtils();
-        if (ftp.connect(host, username, password, Integer.parseInt(port)))
-        {
-            int i = 0;
-            for (int len = fullFileNames.length; i < len; i++)
-                ftp.delete(fullFileNames[i]);
         }
     }
 
