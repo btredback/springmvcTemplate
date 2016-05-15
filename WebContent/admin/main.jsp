@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="/require/taglibs.jsp"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -48,7 +48,7 @@ function tabsManager(e,params)
 {
 	var  currentTarget=e.currentTarget;//绑定点击事件的元素
 	var title=$(currentTarget).linkbutton("options").text;
-	var tab=$("#main").tabs('getTab',title);//根据标题判断tab是否存在
+	var tab=$("#main").tabs('exists',title);//根据标题判断tab是否存在
 	if(tab)
 	{
 		$("#main").tabs('select',title);//刷新tab内容
@@ -63,6 +63,16 @@ function tabsManager(e,params)
 		});
 	}
 }
+/* (function(){
+	var login = "${login}";
+	var loginid="${loginid}";
+	$(function(){
+		//禁止鼠标右键
+		$(document).bind("contextmenu",function(e){return false});		
+		$("#main").tabs("options").fit=true;
+		$("#main").tabs("resize");
+	});
+})()	 */
 </script>
 <!-- script stop -->
 <title>后台管理</title>
@@ -102,7 +112,7 @@ function tabsManager(e,params)
 	    	</div>
 	    </div>
 	    <div id="center" data-options="region:'center'," style="background:#eee;overflow:hidden;">
-	    	<div id="main" class="easyui-tabs" data-options="border:false" style="width:100%;height:100%;overflow:hidden;">
+	    	<div id="main" class="easyui-tabs" fit="true" data-options="border:false" style="width:100%;height:100%;overflow:hidden;">
 			</div>
 	    </div>
 	</div>
