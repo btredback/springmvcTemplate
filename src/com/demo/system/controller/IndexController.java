@@ -37,7 +37,7 @@ public class IndexController {
 	@RequestMapping("/admin/login.htm")
 	@ResponseBody
 	public ResultInfo login(String username,String password){
-		//test
+		/*//test
 		String sql = "select * from HELP";
 		ArrayList test = (ArrayList) jdbcTemplate.query(sql, new RowMapper<Map>(){
 			public Map mapRow(ResultSet rs,int rowNum) throws SQLException{
@@ -45,8 +45,8 @@ public class IndexController {
 		        row.put("INFO", rs.getString("INFO"));		     
 		        return row;  
 			}
-		});
-		ResultInfo resultInfo=new ResultInfo(1,"登陆成功",test);
+		});*/
+		ResultInfo resultInfo=new ResultInfo(1,"登陆成功");
 		return resultInfo;
 	}
 
