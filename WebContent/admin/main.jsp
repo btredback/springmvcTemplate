@@ -42,6 +42,7 @@
 <script type="text/javascript" src="../javascripts/thirdpart/easyui142/locale/easyui-lang-zh_CN.js"></script>
 <!-- 自定义公共js -->
 <script type="text/javascript" src="../javascripts/admin/common.js"></script>
+<script type="text/javascript" src="../javascripts/common/easyuiUtil.js"></script>
 <script type="text/javascript">
 	//tabs页面建立
 function tabsManager(e,params)

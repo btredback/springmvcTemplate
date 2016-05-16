@@ -19,7 +19,7 @@
 <script type="text/javascript">
 	$(function(){
 		//表单验证
-		$("#username").validatebox({
+		$("#loginname").validatebox({
 			required: true
 		});
 		$("#password").validatebox({
@@ -54,16 +54,16 @@
 	});
 	
 	function login_validate(){
-		if ($('#username').validatebox("isValid") && $('#password').validatebox("isValid")) 
+		if ($('#loginname').validatebox("isValid") && $('#password').validatebox("isValid")) 
 		{	
 			var data={
-				username:$("#username").val(),
+				loginname:$("#loginname").val(),
 				password:$("#password").val()
 			};
 			data.password=$.md5(data.password);
 		 	$.post("login.htm",data,function(result){
 		 		alert(result.code);
-				if(result.code=="1")
+				if(parseInt(result.code) === parseInt("1"))
 				{
 					console.log("message---->"+result.message);
 					window.location.href = "index.htm";
@@ -92,7 +92,7 @@
 		</div>
 		<p style="padding: 30px 0px 10px; position: relative;">
 			<span class="u_logo"></span>
-			<input class="ipt" id="username" type="text"  placeholder="请输入用户名" value="" />
+			<input class="ipt" id="loginname" type="text"  placeholder="请输入用户名" value="" />
 			<input type="hidden" id="uid"/>
 		</p>
 		<p style="position: relative;">
